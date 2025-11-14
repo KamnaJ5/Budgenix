@@ -101,14 +101,14 @@ export default function FeaturesPage() {
           {/* Hero Section */}
           <section className="w-full text-center">
             <div className="flex flex-col items-center gap-6 max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
-                <span className="text-green-400 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 border border-zinc-800">
+                <span className="text-zinc-300 text-sm font-medium">
                   Powered by Agora AI
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">
                 Your Personal Financial{" "}
-                <span className="text-green-400">Mentor</span>
+                <span className="text-white">Mentor</span>
               </h1>
               <p className="text-zinc-400 text-lg sm:text-xl max-w-2xl">
                 A cutting-edge conversational budget manager that empowers you
@@ -123,7 +123,7 @@ export default function FeaturesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col gap-6">
                 <div className="inline-flex w-fit px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800">
-                  <span className="text-green-400 text-xs font-medium uppercase tracking-wider">
+                  <span className="text-zinc-400 text-xs font-medium uppercase tracking-wider">
                     Core Innovation
                   </span>
                 </div>
@@ -153,7 +153,7 @@ export default function FeaturesPage() {
               <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-8">
                 <div className="space-y-4">
                   <div className="flex gap-3">
-                    <div className="w-8 h-8 rounded-full bg-green-500 flex-shrink-0 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-full bg-zinc-700 flex-shrink-0 flex items-center justify-center">
                       <span className="text-white text-xs font-bold">You</span>
                     </div>
                     <div className="flex-1 bg-zinc-800 rounded-lg p-3">
@@ -238,10 +238,10 @@ export default function FeaturesPage() {
               ].map((feature, idx) => (
                 <div
                   key={idx}
-                  className="relative group bg-zinc-900 border border-zinc-800 rounded-lg p-6 hover:border-green-500/50 transition-all duration-300"
+                  className="relative group bg-zinc-900 border border-zinc-800 rounded-lg p-6 hover:border-zinc-700 transition-all duration-300"
                 >
-                  <div className="absolute top-4 right-4 px-2 py-1 rounded bg-green-500/10 border border-green-500/20">
-                    <span className="text-green-400 text-xs font-medium">
+                  <div className="absolute top-4 right-4 px-2 py-1 rounded bg-zinc-800 border border-zinc-700">
+                    <span className="text-zinc-300 text-xs font-medium">
                       {feature.highlight}
                     </span>
                   </div>
@@ -295,7 +295,7 @@ export default function FeaturesPage() {
                 },
               ].map((audience, idx) => (
                 <div key={idx} className="flex flex-col gap-4">
-                  <h3 className="text-xl font-semibold text-green-400">
+                  <h3 className="text-xl font-semibold text-white">
                     {audience.title}
                   </h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">
@@ -304,7 +304,7 @@ export default function FeaturesPage() {
                   <div className="flex flex-col gap-2 pt-2">
                     {audience.stats.map((stat, i) => (
                       <div key={i} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-zinc-500"></div>
                         <span className="text-sm text-zinc-300">{stat}</span>
                       </div>
                     ))}
@@ -407,7 +407,7 @@ export default function FeaturesPage() {
                     key={idx}
                     className="flex flex-col items-center text-center gap-4 relative"
                   >
-                    <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center text-black text-2xl font-bold z-10">
+                    <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-black text-2xl font-bold z-10">
                       {item.step}
                     </div>
                     <h3 className="text-xl font-semibold">{item.title}</h3>
@@ -419,7 +419,7 @@ export default function FeaturesPage() {
           </section>
 
           {/* CTA Section */}
-          <section className="w-full bg-gradient-to-br from-green-500/10 to-green-600/5 border border-green-500/20 rounded-lg p-10 text-center">
+          <section className="w-full bg-zinc-900 border border-zinc-800 rounded-lg p-10 text-center">
             <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
               Ready to Master Your Finances?
             </h2>

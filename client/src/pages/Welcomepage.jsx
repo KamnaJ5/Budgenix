@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Welcomepage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,26 +19,51 @@ export default function Welcomepage() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex flex-1 justify-end gap-8">
             <div className="flex items-center gap-8">
-              <a className="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">
+              <Link
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                to="/features"
+              >
                 Features
-              </a>
-              <a className="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">
+              </Link>
+              <Link
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                to="/pricing"
+              >
                 Pricing
-              </a>
-              <a className="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">
+              </Link>
+              <Link
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                to="/blog"
+              >
                 Blog
-              </a>
+              </Link>
             </div>
-            <button className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-md h-10 px-4 bg-white text-black text-sm font-medium hover:bg-zinc-100 transition-all">
+            <Link
+              to="/signup"
+              className="flex min-w-[84px] cursor-pointer items-center justify-center rounded-md h-10 px-4 bg-white text-black text-sm font-medium hover:bg-zinc-100 transition-all"
+            >
               <span className="truncate">Sign Up</span>
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
             </button>
           </div>
@@ -47,18 +73,30 @@ export default function Welcomepage() {
         {mobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-zinc-900 border-b border-zinc-800 p-4">
             <div className="flex flex-col gap-4">
-              <a className="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">
+              <Link
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                to="/features"
+              >
                 Features
-              </a>
-              <a className="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">
+              </Link>
+              <Link
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                to="/pricing"
+              >
                 Pricing
-              </a>
-              <a className="text-sm font-medium text-zinc-400 hover:text-white transition-colors" href="#">
+              </Link>
+              <Link
+                className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                to="/blog"
+              >
                 Blog
-              </a>
-              <button className="flex cursor-pointer items-center justify-center rounded-md h-10 px-4 bg-white text-black text-sm font-medium hover:bg-zinc-100 transition-all">
+              </Link>
+              <Link
+                to="/signup"
+                className="flex  cursor-pointer items-center justify-center rounded-md h-10 px-4 bg-white text-black text-sm font-medium hover:bg-zinc-100 transition-all"
+              >
                 Sign Up
-              </button>
+              </Link>
             </div>
           </div>
         )}
@@ -76,7 +114,8 @@ export default function Welcomepage() {
                     Take control of your finances
                   </h1>
                   <p className="text-zinc-400 text-base sm:text-lg">
-                    Your personal finance expert, available 24/7. Chat your way to a better budget.
+                    Your personal finance expert, available 24/7. Chat your way
+                    to a better budget.
                   </p>
                 </div>
                 <button className="flex w-fit cursor-pointer items-center justify-center rounded-md h-12 px-6 bg-white text-black text-base font-medium hover:bg-zinc-100 transition-all">
@@ -87,12 +126,18 @@ export default function Welcomepage() {
                 <div className="bg-zinc-900 border border-zinc-800 rounded-lg max-w-md w-full p-8">
                   <div className="space-y-4">
                     <div className="bg-zinc-800 rounded-lg p-4">
-                      <p className="text-sm text-zinc-400">Your spending this month</p>
-                      <p className="text-2xl font-semibold mt-2">$2,847</p>
+                      <p className="text-sm text-zinc-400">
+                        Your spending this month
+                      </p>
+                      <p className="text-2xl font-semibold mt-2 text-red-400">
+                        $2,847
+                      </p>
                     </div>
                     <div className="bg-zinc-800 rounded-lg p-4">
                       <p className="text-sm text-zinc-400">Budget remaining</p>
-                      <p className="text-2xl font-semibold mt-2">$1,153</p>
+                      <p className="text-2xl font-semibold mt-2 text-green-400">
+                        $1,153
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -110,20 +155,26 @@ export default function Welcomepage() {
                 {
                   number: "1",
                   title: "Connect Accounts",
-                  description: "Securely link your bank accounts for automated expense tracking.",
+                  description:
+                    "Securely link your bank accounts for automated expense tracking.",
                 },
                 {
                   number: "2",
                   title: "Chat with AI",
-                  description: "Ask our AI for spending patterns, budget tips, and financial advice.",
+                  description:
+                    "Ask our AI for spending patterns, budget tips, and financial advice.",
                 },
                 {
                   number: "3",
                   title: "Get Insights",
-                  description: "Receive personalized reports and actionable insights to improve your finances.",
+                  description:
+                    "Receive personalized reports and actionable insights to improve your finances.",
                 },
               ].map((item, idx) => (
-                <div key={idx} className="flex flex-col gap-4 rounded-lg border border-zinc-800 bg-zinc-900 p-6 items-center">
+                <div
+                  key={idx}
+                  className="flex flex-col gap-4 rounded-lg border border-zinc-800 bg-zinc-900 p-6 items-center"
+                >
                   <div className="flex size-12 items-center justify-center rounded-md bg-white text-black text-lg font-semibold">
                     {item.number}
                   </div>
@@ -144,30 +195,40 @@ export default function Welcomepage() {
             <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  quote: "Finance helped me finally get a handle on my student loans and monthly spending. The AI chat is like having a financial advisor in my pocket!",
+                  quote:
+                    "Finance helped me finally get a handle on my student loans and monthly spending. The AI chat is like having a financial advisor in my pocket!",
                   name: "Alex Johnson",
                   role: "University Student",
                 },
                 {
-                  quote: "As a recent grad in my first job, this app is a lifesaver. It automatically categorizes my spending so I know exactly where my money is going.",
+                  quote:
+                    "As a recent grad in my first job, this app is a lifesaver. It automatically categorizes my spending so I know exactly where my money is going.",
                   name: "Samantha Lee",
                   role: "Junior Developer",
                 },
                 {
-                  quote: "I used to be so stressed about money. The weekly insights are amazing for building better habits without feeling overwhelmed. Highly recommend!",
+                  quote:
+                    "I used to be so stressed about money. The weekly insights are amazing for building better habits without feeling overwhelmed. Highly recommend!",
                   name: "David Chen",
                   role: "Marketing Intern",
                 },
               ].map((testimonial, idx) => (
-                <div key={idx} className="flex flex-col gap-4 rounded-lg border border-zinc-800 bg-zinc-900 p-6 text-left">
+                <div
+                  key={idx}
+                  className="flex flex-col gap-4 rounded-lg border border-zinc-800 bg-zinc-900 p-6 text-left"
+                >
                   <p className="text-zinc-300 text-sm">"{testimonial.quote}"</p>
                   <div className="flex items-center gap-3 pt-2 border-t border-zinc-800">
                     <div className="h-10 w-10 rounded-full bg-zinc-800 flex items-center justify-center">
-                      <span className="text-white text-sm font-medium">{testimonial.name[0]}</span>
+                      <span className="text-white text-sm font-medium">
+                        {testimonial.name[0]}
+                      </span>
                     </div>
                     <div>
                       <p className="font-medium text-sm">{testimonial.name}</p>
-                      <p className="text-xs text-zinc-400">{testimonial.role}</p>
+                      <p className="text-xs text-zinc-400">
+                        {testimonial.role}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -177,9 +238,12 @@ export default function Welcomepage() {
 
           {/* Final CTA Section */}
           <section className="w-full rounded-lg bg-zinc-900 border border-zinc-800 p-10 my-12 text-center flex flex-col items-center gap-6">
-            <h2 className="text-3xl font-semibold">Ready to simplify your finances?</h2>
+            <h2 className="text-3xl font-semibold">
+              Ready to simplify your finances?
+            </h2>
             <p className="max-w-xl text-zinc-400">
-              Join thousands of students and young professionals who are taking control of their financial future.
+              Join thousands of students and young professionals who are taking
+              control of their financial future.
             </p>
             <button className="flex w-fit cursor-pointer items-center justify-center rounded-md h-12 px-6 bg-white text-black text-base font-medium hover:bg-zinc-100 transition-all">
               <span className="truncate">Get Started Now</span>
@@ -191,14 +255,22 @@ export default function Welcomepage() {
       {/* Footer */}
       <footer className="w-full border-t border-zinc-800">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-8 sm:px-6 lg:px-8 md:flex-row">
-          <p className="text-sm text-zinc-400">© 2024 Finance. All rights reserved.</p>
+          <p className="text-sm text-zinc-400">
+            © 2024 Finance. All rights reserved.
+          </p>
           <div className="flex items-center gap-6">
-            <a className="text-sm text-zinc-400 hover:text-white transition-colors" href="#">
+            <Link
+              className="text-sm text-zinc-400 hover:text-white transition-colors"
+              to="/privacy"
+            >
               Privacy Policy
-            </a>
-            <a className="text-sm text-zinc-400 hover:text-white transition-colors" href="#">
+            </Link>
+            <Link
+              className="text-sm text-zinc-400 hover:text-white transition-colors"
+              to="/terms"
+            >
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

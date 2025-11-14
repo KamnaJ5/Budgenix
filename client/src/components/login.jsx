@@ -11,31 +11,49 @@ export default function Login({ onSubmit, onForgot }) {
   }
 
   return (
-    <div className="min-h-screen grid place-items-center bg-base-200 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-black p-4">
       <div className="w-full max-w-md">
-        <div className="card bg-base-100 shadow-xl border">
-          <div className="card-body">
-            <h2 className="card-title">Sign in</h2>
-            <form className="mt-4" onSubmit={handleSubmit}>
-              <label className="input input-bordered flex items-center gap-2">
-                <MailIcon className="size-4 opacity-70" />
+        <div className="bg-zinc-900 rounded-lg border border-zinc-800 p-8">
+          <div className="mb-8">
+            <h1 className="text-2xl font-semibold text-white mb-1">Login</h1>
+            <p className="text-sm text-zinc-400">
+              Enter your credentials to continue
+            </p>
+          </div>
+
+          <div className="space-y-5" onSubmit={handleSubmit}>
+            <div>
+              <label className="block text-sm font-medium text-zinc-300 mb-2">
+                Email
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <MailIcon className="h-5 w-5 text-zinc-500" />
+                </div>
                 <input
                   type="email"
-                  className="grow"
-                  placeholder="Email"
+                  className="w-full pl-10 pr-4 py-2.5 bg-black border border-zinc-800 rounded-md text-white text-sm placeholder-zinc-500 focus:outline-none focus:border-zinc-600 transition"
+                  placeholder="you@company.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   autoComplete="email"
                 />
-              </label>
+              </div>
+            </div>
 
-              <label className="input input-bordered mt-4 flex items-center gap-2">
-                <LockIcon className="size-4 opacity-70" />
+            <div>
+              <label className="block text-sm font-medium text-zinc-300 mb-2">
+                Password
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <LockIcon className="h-5 w-5 text-zinc-500" />
+                </div>
                 <input
                   type={show ? "text" : "password"}
-                  className="grow"
-                  placeholder="Password"
+                  className="w-full pl-10 pr-16 py-2.5 bg-black border border-zinc-800 rounded-md text-white text-sm placeholder-zinc-500 focus:outline-none focus:border-zinc-600 transition"
+                  placeholder="Enter password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -43,28 +61,39 @@ export default function Login({ onSubmit, onForgot }) {
                 />
                 <button
                   type="button"
-                  className="btn btn-link btn-xs"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-xs font-medium text-zinc-400 hover:text-white transition"
                   onClick={() => setShow((s) => !s)}
                   aria-label={show ? "Hide password" : "Show password"}
                 >
                   {show ? "Hide" : "Show"}
                 </button>
-              </label>
-
-              <div className="mt-2 text-right">
-                <a
-                  type="button"
-                  className="link link-primary text-sm"
-                  onClick={() => onForgot?.(email)}
-                >
-                  Forgot password?
-                </a>
               </div>
+            </div>
 
-              <button type="submit" className="btn btn-primary mt-4 w-full">
-                Sign in
+            <div className="flex items-center justify-end">
+              <button
+                type="button"
+                className="text-sm text-zinc-400 hover:text-white transition"
+                onClick={() => onForgot?.(email)}
+              >
+                Forgot password?
               </button>
-            </form>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="w-full bg-white hover:bg-zinc-100 text-black font-medium py-2.5 px-4 rounded-md transition text-sm"
+            >
+              Sign in
+            </button>
+          </div>
+
+          <div className="mt-6 pt-6 border-t border-zinc-800 text-center">
+            <p className="text-sm text-zinc-400">
+              Don't have an account?{" "}
+              <button className="text-white hover:underline">Sign up</button>
+            </p>
           </div>
         </div>
       </div>

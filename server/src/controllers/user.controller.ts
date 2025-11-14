@@ -46,7 +46,19 @@ export const registerUser = async (
         .json({ message: "Username or email already exists" });
     }
 
-    const newUser = new User({ username, email, password, income });
+    const newUser = new User({
+      username,
+      email,
+      password,
+      income,
+      categories: [
+        "Food",
+        "Utilities",
+        "Entertainment",
+        "Transportation",
+        "Healthcare",
+      ],
+    });
     await newUser.save();
     return res
       .status(201)

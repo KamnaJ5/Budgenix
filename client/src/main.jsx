@@ -8,6 +8,5 @@ import LoginPage from "./pages/login.jsx";
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <App />
-    <LoginPage />
   </BrowserRouter>
 );

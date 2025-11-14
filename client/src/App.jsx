@@ -5,6 +5,8 @@ import "./App.css";
 import Dashboard from "./pages/dashboard";
 import { Routes, Route } from "react-router-dom";
 
+import LoginPage from "./pages/login";
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -13,6 +15,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </div>
     </>
